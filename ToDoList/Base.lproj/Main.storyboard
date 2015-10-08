@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="shE-UU-Qsn">
-                                <rect key="frame" x="20" y="72" width="560" height="508"/>
+                                <rect key="frame" x="20" y="20" width="573" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="FQh-gX-WWE"/>
@@ -28,15 +28,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="shE-UU-Qsn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="0ey-rI-6mb"/>
-                            <constraint firstItem="shE-UU-Qsn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1wm-PV-xIK"/>
+                            <constraint firstItem="shE-UU-Qsn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="6.5" id="1wm-PV-xIK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="shE-UU-Qsn" secondAttribute="trailing" id="BxO-on-k1K"/>
                             <constraint firstAttribute="trailing" secondItem="shE-UU-Qsn" secondAttribute="trailing" id="OGD-Lp-J1c"/>
                             <constraint firstAttribute="leadingMargin" secondItem="shE-UU-Qsn" secondAttribute="leading" id="Syo-Ys-SVV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="shE-UU-Qsn" secondAttribute="bottom" id="VYM-sQ-Axv"/>
+                            <constraint firstItem="shE-UU-Qsn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-44" id="g9A-tR-LKQ"/>
                             <constraint firstItem="shE-UU-Qsn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hRK-It-P2I"/>
                             <constraint firstItem="shE-UU-Qsn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="htt-m3-CV2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="shE-UU-Qsn" secondAttribute="trailing" id="jBr-US-BPj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="shE-UU-Qsn" secondAttribute="trailing" constant="-13" id="jBr-US-BPj"/>
                             <constraint firstItem="shE-UU-Qsn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pJs-v8-2Zo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="shE-UU-Qsn" secondAttribute="bottom" constant="20" id="waV-Rt-nNu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="shE-UU-Qsn" secondAttribute="bottom" constant="20" id="xre-Li-drn"/>
@@ -61,6 +61,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableViewTasks" destination="shE-UU-Qsn" id="y9k-QX-iRC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,6 +94,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuN-RW-uGI">
                                 <rect key="frame" x="269" y="272" width="64" height="30"/>
                                 <state key="normal" title="Add Task"/>
+                                <connections>
+                                    <action selector="addTask:" destination="7Og-8e-eN4" eventType="touchUpInside" id="CuW-Is-Qvh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doH-9J-K7J">
                                 <rect key="frame" x="219" y="80" width="163" height="48"/>
@@ -103,20 +109,44 @@
                         <constraints>
                             <constraint firstItem="dqV-3s-jRp" firstAttribute="centerX" secondItem="HAG-9H-74Y" secondAttribute="centerX" id="14b-cQ-JJA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dqV-3s-jRp" secondAttribute="leading" id="42O-Hd-hs6"/>
+                            <constraint firstItem="BHG-rK-tWy" firstAttribute="leading" secondItem="dqV-3s-jRp" secondAttribute="leading" id="5iO-YQ-chf"/>
+                            <constraint firstItem="BHG-rK-tWy" firstAttribute="centerX" secondItem="doH-9J-K7J" secondAttribute="centerX" id="7JY-cE-x2f"/>
                             <constraint firstItem="doH-9J-K7J" firstAttribute="leading" secondItem="HAG-9H-74Y" secondAttribute="leadingMargin" constant="199" id="8Oo-xr-YTn"/>
-                            <constraint firstItem="BHG-rK-tWy" firstAttribute="centerX" secondItem="HAG-9H-74Y" secondAttribute="centerX" id="Cui-TQ-gvn"/>
+                            <constraint firstItem="doH-9J-K7J" firstAttribute="top" secondItem="b3W-V8-Yuh" secondAttribute="bottom" constant="16" id="ARh-HB-yNT"/>
                             <constraint firstItem="XuN-RW-uGI" firstAttribute="centerX" secondItem="HAG-9H-74Y" secondAttribute="centerX" constant="1" id="Eov-vS-wbA"/>
                             <constraint firstItem="BHG-rK-tWy" firstAttribute="top" secondItem="b3W-V8-Yuh" secondAttribute="bottom" constant="99" id="It7-md-0uf"/>
-                            <constraint firstItem="doH-9J-K7J" firstAttribute="centerX" secondItem="HAG-9H-74Y" secondAttribute="centerX" id="L7m-j6-DpH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="doH-9J-K7J" secondAttribute="trailing" constant="198" id="N8T-eq-djw"/>
                             <constraint firstItem="dqV-3s-jRp" firstAttribute="top" secondItem="b3W-V8-Yuh" secondAttribute="bottom" constant="170" id="PLQ-gw-G2b"/>
+                            <constraint firstItem="BHG-rK-tWy" firstAttribute="top" secondItem="doH-9J-K7J" secondAttribute="bottom" constant="35" id="Pjl-XJ-jZT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BHG-rK-tWy" secondAttribute="trailing" id="QCU-kn-1sw"/>
+                            <constraint firstItem="BHG-rK-tWy" firstAttribute="trailing" secondItem="dqV-3s-jRp" secondAttribute="trailing" id="RnU-Uc-Ree"/>
+                            <constraint firstItem="BHG-rK-tWy" firstAttribute="leading" secondItem="HAG-9H-74Y" secondAttribute="leadingMargin" id="Yes-S2-axz"/>
                             <constraint firstItem="XuN-RW-uGI" firstAttribute="top" secondItem="dqV-3s-jRp" secondAttribute="bottom" constant="8" id="a1T-Fk-Nqp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dqV-3s-jRp" secondAttribute="trailing" id="dZb-ID-6Rp"/>
                             <constraint firstItem="BHG-rK-tWy" firstAttribute="top" secondItem="doH-9J-K7J" secondAttribute="bottom" constant="35" id="gMB-PP-HxH"/>
+                            <constraint firstItem="XuN-RW-uGI" firstAttribute="top" secondItem="dqV-3s-jRp" secondAttribute="bottom" constant="8" id="m9B-6m-hwm"/>
                             <constraint firstAttribute="leadingMargin" secondItem="BHG-rK-tWy" secondAttribute="leading" id="sra-qd-LGu"/>
+                            <constraint firstItem="Wr3-Fd-21V" firstAttribute="top" secondItem="dqV-3s-jRp" secondAttribute="bottom" constant="336" id="v1u-Ln-4kS"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="It7-md-0uf"/>
+                                <exclude reference="QCU-kn-1sw"/>
+                                <exclude reference="gMB-PP-HxH"/>
+                                <exclude reference="sra-qd-LGu"/>
+                                <exclude reference="8Oo-xr-YTn"/>
+                                <exclude reference="N8T-eq-djw"/>
+                                <exclude reference="42O-Hd-hs6"/>
+                                <exclude reference="PLQ-gw-G2b"/>
+                                <exclude reference="dZb-ID-6Rp"/>
+                                <exclude reference="a1T-Fk-Nqp"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="taskDescriptionInput" destination="dqV-3s-jRp" id="s5K-df-4P1"/>
+                        <outlet property="taskNameInput" destination="BHG-rK-tWy" id="9Xg-OH-2N9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWq-fm-5Oh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

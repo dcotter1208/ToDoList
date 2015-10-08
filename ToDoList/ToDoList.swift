@@ -28,6 +28,10 @@ class ToDo {
     
 func addItemToList(taskName: String, description: String?) {
         taskList.append(Task(taskName: taskName, description: description))
+
+    func editTaskItem(taskName: String, description: String?) {
+        
+    }
     
     }
     
